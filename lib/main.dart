@@ -6,10 +6,13 @@ import 'package:flutter/services.dart';
 
 import 'game.dart';
 import 'ui.dart';
+import 'package:winter_core/winter_core.dart';
 
-void main() {
+void main() => runWinterApp(repo: 'winter-mines', appName: 'Сапёр', body: _main);
+
+void _main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MinesApp());
+  runApp(WinterCrashBanner(child: const MinesApp()));
 }
 
 class MinesApp extends StatelessWidget {
